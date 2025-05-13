@@ -37,6 +37,12 @@ class MedicationListScreen extends StatelessWidget {
               return ListTile(
                 title: Text(medication.name),
                 subtitle: Text(medication.dosage),
+                onTap: () {
+                  Get.toNamed(
+                    '/edit-medication',
+                    parameters: {'id': medication.id}, // Pasar el ID del medicamento
+                  );
+                },
               );
             },
           );

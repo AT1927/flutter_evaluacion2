@@ -44,9 +44,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/register', page: () => RegisterScreen()),
         GetPage(name: '/medications', page: () => MedicationListScreen()),
         GetPage(name: '/add-medication', page: () => AddMedicationScreen()),
-        GetPage(name: '/add-medication', page: () => AddMedicationScreen()),
         GetPage(
-          name: '/edit-medication/:id',
+          name: '/edit-medication',
           page: () => EditMedicationScreen(),
         ),
       ],
