@@ -1,5 +1,5 @@
 import 'package:appwrite/appwrite.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+//import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class AppwriteConfig {
   static const String endpoint = 'https://fra.cloud.appwrite.io/v1';

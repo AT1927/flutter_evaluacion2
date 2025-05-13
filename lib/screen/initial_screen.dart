@@ -22,9 +22,11 @@ class InitialScreen extends StatelessWidget {
     final isLoggedIn = await authController.checkAuth();
 
     if (isLoggedIn) {
-      Get.toNamed('/medications');
+      // offAllNamed: para reemplazar toda la pila
+      Get.offAllNamed('/medications');
     } else {
-      Get.toNamed('/login');
+      // offAllNamed: para ir al login sin opción de regresar
+      Get.offAllNamed('/login');
     }
   }
 }

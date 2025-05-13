@@ -40,7 +40,8 @@ class AuthController extends GetxController {
       );
       final userData = await account.get();
       user.value = userData;
-      Get.toNamed('/medications');
+      // Usar offAllNamed para reemplazar toda la pila de navegación
+      Get.offAllNamed('/medications');
     } catch (e) {
       Get.snackbar('Error', e.toString());
     }
@@ -50,6 +51,8 @@ class AuthController extends GetxController {
     try {
       await account.deleteSession(sessionId: 'current');
       user.value = null;
+      // También usar offAllNamed al cerrar sesión para ir al login
+      Get.offAllNamed('/login');
     } catch (e) {
       Get.snackbar('Error', e.toString());
     }
