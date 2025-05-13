@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import 'package:application_medicines/auth_controller.dart';
 import 'package:application_medicines/medication_controller.dart';
-import 'package:application_medicines/medication.dart';
+//import 'package:application_medicines/medication.dart';
 
 class MedicationListScreen extends StatelessWidget {
   final MedicationController medicationController =

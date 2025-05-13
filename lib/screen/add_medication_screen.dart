@@ -5,6 +5,7 @@ import 'package:application_medicines/auth_controller.dart';
 import 'package:application_medicines/medication.dart';
 import 'package:application_medicines/medication_controller.dart';
 import 'package:application_medicines/notification_service.dart';
+import 'package:flutter/services.dart';
 
 class AddMedicationScreen extends StatelessWidget {
   final MedicationController medicationController =
@@ -42,6 +43,11 @@ class AddMedicationScreen extends StatelessWidget {
                 labelText: 'Dosis',
                 border: OutlineInputBorder(),
               ),
+              keyboardType:
+                  TextInputType.number, // Cambia el teclado a numérico
+              inputFormatters: [
+                FilteringTextInputFormatter.digitsOnly, // Permite solo números
+              ],
             ),
             const SizedBox(height: 16),
             Obx(
