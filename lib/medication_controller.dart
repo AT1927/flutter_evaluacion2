@@ -71,4 +71,17 @@ class MedicationController extends GetxController {
       Get.snackbar('Error', e.toString());
     }
   }
+
+  //Metodos nuevos para ordenar:
+  void sortMedicationsByName() {
+    medications.sort((a, b) => a.name.compareTo(b.name));
+  }
+
+  void sortMedicationsByDosage() {
+    medications.sort((a, b) => a.dosage.compareTo(b.dosage));
+  }
+
+  void sortMedicationsByTime() {
+    medications.sort((a, b) => a.time.compareTo(b.time));
+  }
 }
