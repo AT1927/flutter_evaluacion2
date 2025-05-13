@@ -8,8 +8,8 @@ class MedicationController extends GetxController {
   final Databases databases = Databases(AppwriteConfig.getClient());
   final RxList<Medication> medications = <Medication>[].obs;
 
-  static const String databaseId = '❓❓❓❓❓❓❓❓❓❓';
-  static const String collectionId = '❓❓❓❓❓❓❓❓❓❓';
+  static const String databaseId = '68228d1f000c1b97b9f4';
+  static const String collectionId = '68228d32003511381f95';
 
   @override
   void onInit() {
