@@ -51,7 +51,7 @@ class AuthController extends GetxController {
     try {
       await account.deleteSession(sessionId: 'current');
       user.value = null;
-      // También usar offAllNamed al cerrar sesión para ir al login
+      // Navegación a la pantalla de login sin posibilidad de regresar
       Get.offAllNamed('/login');
     } catch (e) {
       Get.snackbar('Error', e.toString());
