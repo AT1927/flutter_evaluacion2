@@ -10,13 +10,14 @@ import 'package:application_medicines/screen/initial_screen.dart';
 import 'package:application_medicines/screen/login_screen.dart';
 import 'package:application_medicines/screen/medication_list_screen.dart';
 import 'package:application_medicines/screen/register_screen.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   final notificationService = NotificationService();
   await notificationService.initNotification();
-
+  await dotenv.load(fileName: ".env");
   runApp(MyApp());
 }
 
