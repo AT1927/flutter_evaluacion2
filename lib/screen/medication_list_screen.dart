@@ -40,7 +40,9 @@ class MedicationListScreen extends StatelessWidget {
                 onTap: () {
                   Get.toNamed(
                     '/edit-medication',
-                    parameters: {'id': medication.id}, // Pasar el ID del medicamento
+                    parameters: {
+                      'id': medication.id
+                    }, // Pasar el ID del medicamento
                   );
                 },
               );

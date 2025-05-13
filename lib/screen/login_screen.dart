@@ -41,7 +41,16 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Iniciar Sesión'),
+        centerTitle: true, // Centra el título
+        title: const Text(
+          'Iniciar Sesión',
+          style: TextStyle(
+            fontSize: 24, // Tamaño de fuente más grande
+            fontWeight: FontWeight.bold, // Texto en negrita
+            color: Colors.white, // Color del texto
+          ),
+        ),
+        backgroundColor: Colors.blue, // Cambia el color de fondo del AppBar
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

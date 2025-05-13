@@ -78,7 +78,11 @@ class MedicationController extends GetxController {
   }
 
   void sortMedicationsByDosage() {
-    medications.sort((a, b) => a.dosage.compareTo(b.dosage));
+    medications.sort((a, b) {
+      final dosageA = double.tryParse(a.dosage) ?? 0; // Convierte a número
+      final dosageB = double.tryParse(b.dosage) ?? 0; // Convierte a número
+      return dosageA.compareTo(dosageB); // Ordena ascendentemente
+    });
   }
 
   void sortMedicationsByTime() {
