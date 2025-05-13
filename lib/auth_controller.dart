@@ -10,10 +10,11 @@ class AuthController extends GetxController {
 
   Future<bool> checkAuth() async {
     try {
-      await account.get();
+      final userData = await account.get();
+      user.value = userData;
       return true;
     } catch (e) {
-      Get.snackbar('Error', e.toString());
+      // No mostrar snackbar aquí, es normal no estar autenticado
       return false;
     }
   }
