@@ -35,7 +35,7 @@ class EditMedicationScreen extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.delete),
-            onPressed: () {},
+            onPressed: () => _showDeleteConfirmationDialog(context),
           ),
         ],
       ),
@@ -111,6 +111,33 @@ class EditMedicationScreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  void _showDeleteConfirmationDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Eliminar Medicamento'),
+          content: const Text(
+              '¿Estás seguro de que deseas eliminar este medicamento?'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context), // Cerrar el modal
+              child: const Text('Cancelar'),
+            ),
+            TextButton(
+              onPressed: () async {
+                await medicationController.deleteMedication(medicationId);
+                Navigator.pop(context); // Cerrar el modal
+                Get.back(); // Volver a la pantalla anterior
+              },
+              child: const Text('Eliminar'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
